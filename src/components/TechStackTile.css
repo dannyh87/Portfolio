@@ -1,0 +1,39 @@
+.tile {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px; /* For 3D perspective */
+    position: relative;
+    cursor: pointer; /* Optional for hover effect */
+  }
+  
+  .tile-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back face during rotation */
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .tile-face.front {
+    transform: rotateY(0deg);
+  }
+  
+  .tile-face.back {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-tile-enter {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-tile-enter-active {
+    transform: rotateY(0deg);
+  }
+  
+  .flip-tile-exit {
+    transform: rotateY(0deg);
+  }
+  
+  .flip-tile-exit-active {
+    transform: rotateY(180deg);
+  }
